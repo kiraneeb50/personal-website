@@ -1,0 +1,16 @@
+# Copy and Paste These Commands (Your Username is Already Set!)
+
+cd /Users/kiraneeb/Desktop/misproject1
+
+git init
+
+git add .
+
+git commit -m "Initial commit: Personal website"
+
+git remote add origin https://github.com/kiraneeb/kiraneeb.git
+
+git branch -M main
+
+git push -u origin main
+

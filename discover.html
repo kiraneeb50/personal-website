@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover - My Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="media/style.css">
+</head>
+<body>
+    <header>
+        <div class="title-bar"></div>
+        <nav class="main-nav">
+            <div class="tab-container">
+                <a href="index.html" class="tab"><span class="icon-box"><i class="fas fa-home"></i></span> Home</a>
+                <a href="hobbies.html" class="tab"><span class="icon-box"><i class="fas fa-heart"></i></span> Hobbies</a>
+                <a href="discover.html" class="tab active"><span class="icon-box"><i class="fas fa-location-dot"></i></span> Discover</a>
+                <a href="resume.html" class="tab"><span class="icon-box"><i class="fas fa-file-alt"></i></span> Resume</a>
+                <a href="career.html" class="tab"><span class="icon-box"><i class="fas fa-briefcase"></i></span> Career</a>
+                <a href="game.html" class="tab"><span class="icon-box"><i class="fas fa-gamepad"></i></span> Game</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Discover Duluth & UMD</h1>
+        
+        <div class="discover-content">
+            <div class="discover-sections-row">
+                <section class="discover-section">
+                    <h2>Why I Chose UMD</h2>
+                    <p>I chose UMD because of the beautiful hiking trails throughout campus and around Lake Superior, as well as its unique winter atmosphere and incredible winter sports opportunities. I had previously skied and snowboarded at the local hill near Duluth, and I loved it. Since you really have to appreciate nature—and essentially the long, cold winters up here—I felt that this college would be the perfect place for me and an easy way to meet people with the same interests.</p>
+                </section>
+                
+                <section class="discover-section">
+                    <h2>What I Like About Duluth</h2>
+                    <p>I love the scenery Duluth has to offer. Not only does it have downtown tourist attractions, but it also has countless parks and hiking spots throughout the area. Duluth has its own unique climate year-round, and it creates a different feeling no matter the season. Another reason I love it is the easy access to the North Shore; you can make a whole day out of exploring more of the lake, while still being within driving distance of the Twin Cities.</p>
+                </section>
+            </div>
+            
+            <section class="discover-section">
+                <h2>My Favorite Places to Go or Eat</h2>
+                <ul class="favorite-places">
+                    <li>Hawk Ridge</li>
+                    <li>Chester Bowl</li>
+                    <li>Spirit Mountain</li>
+                    <li>Hungry Hippie Tacos</li>
+                    <li>Duluth's Best Bread</li>
+                    <li>Northern Waters Smokehaus</li>
+                    <li>DeWitt–Seitz Marketplace</li>
+                    <li>Glensheen Mansion</li>
+                </ul>
+            </section>
+            
+            <section class="discover-section">
+                <h2>Personal Experiences and Highlights</h2>
+                <div class="experience-items-row">
+                    <div class="experience-item">
+                        <h3>Northern Lights Chasing</h3>
+                        <p>One of my favorite recent experiences has been going out late at night with friends to chase the northern lights. If you ever have the chance to see them, do it. It's surreal to witness such a stunning natural phenomenon in person.</p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h3>Local Farmers Markets</h3>
+                        <p>I also love the local farmers markets. They're so fun to walk around and explore, especially with all the food vendors. Grabbing something fresh to eat while wandering around is always my favorite. There's fresh produce, bouquets of flowers, and handmade crafts or jewelry.</p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h3>UMD Hockey Games</h3>
+                        <p>Hockey has become one of my favorite college sports to watch. I've always loved watching different sports, but D1 hockey is truly on another level. And since the team has been doing really well this season, it's been even more exciting. The student section is full of energy—especially during close games or when a fight breaks out. I'll always recommend supporting our school's teams, but the hockey games are truly a guaranteed good time.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="video-section">
+                <div class="video-container">
+                    <video controls class="home-video" preload="metadata">
+                        <source src="media/videos/MarketingUMDvid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="url-share-container">
+            <div class="url-display">
+                <input type="text" id="websiteUrl" value="" readonly class="url-input">
+                <button onclick="copyUrl()" class="copy-url-btn" title="Copy URL">
+                    <i class="fas fa-copy"></i> Copy Link
+                </button>
+            </div>
+            <div class="footer-info">
+                <p>Contact Info: <a href="mailto:neeb0019@d.umn.edu" class="footer-link">neeb0019@d.umn.edu</a></p>
+                <p>University of Minnesota Duluth: <a href="https://www.d.umn.edu" target="_blank" class="footer-link">www.d.umn.edu</a></p>
+                <p>&copy; 2025 My Website. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Set the current URL when page loads - use actual usable URL
+        document.getElementById('websiteUrl').value = window.location.href;
+        function copyUrl() {
+            const urlInput = document.getElementById('websiteUrl');
+            urlInput.select();
+            urlInput.setSelectionRange(0, 99999);
+            try {
+                navigator.clipboard.writeText(urlInput.value).then(() => {
+                    const btn = document.querySelector('.copy-url-btn');
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    btn.style.background = '#A9AC83';
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                    }, 2000);
+                });
+            } catch (err) {
+                document.execCommand('copy');
+                const btn = document.querySelector('.copy-url-btn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                btn.style.background = '#A9AC83';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>
+

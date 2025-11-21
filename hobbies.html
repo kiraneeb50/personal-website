@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies - My Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="media/style.css">
+</head>
+<body>
+    <header>
+        <div class="title-bar"></div>
+        <nav class="main-nav">
+            <div class="tab-container">
+                <a href="index.html" class="tab"><span class="icon-box"><i class="fas fa-home"></i></span> Home</a>
+                <a href="hobbies.html" class="tab active"><span class="icon-box"><i class="fas fa-heart"></i></span> Hobbies</a>
+                <a href="discover.html" class="tab"><span class="icon-box"><i class="fas fa-location-dot"></i></span> Discover</a>
+                <a href="resume.html" class="tab"><span class="icon-box"><i class="fas fa-file-alt"></i></span> Resume</a>
+                <a href="career.html" class="tab"><span class="icon-box"><i class="fas fa-briefcase"></i></span> Career</a>
+                <a href="game.html" class="tab"><span class="icon-box"><i class="fas fa-gamepad"></i></span> Game</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>My Hobbies</h1>
+        
+        <div class="hobbies-horizontal-container">
+            <div class="hobby-card">
+                <div class="hobby-card-image">
+                    <img src="media/images/traveling.jpg" alt="Traveling" class="hobby-card-img">
+                </div>
+                <div class="hobby-card-content">
+                    <h2>Traveling</h2>
+                    <div class="hobby-section">
+                        <h3>Description</h3>
+                        <p>I enjoy traveling because it allows me to step outside my daily routine and experience the world and everything it has to offer. Each place is vastly different and unique, offering new experiences, diverse cultures, and unfamiliar landscapes. Traveling has helped me grow personally; every destination gives me new memories, stories, and knowledge that I can carry with me for the rest of my life.</p>
+                    </div>
+                    <div class="hobby-section">
+                        <h3>Stories</h3>
+                        <p>Last year, I had the amazing opportunity to fly on a plane for the first time. Not only that, my destination was Hawaii! It was an absolute dream come true. Hawaii's natural beauty took my breath away, and it was even more special because it was also the first time I saw the ocean and got to swim in it.</p>
+                    </div>
+                    <div class="hobby-section">
+                        <h3>Importance</h3>
+                        <p>Traveling is important to me because it is something that I've been able to do a lot more over the past couple of years. Growing up I didn't get to go on a lot of family vacations, but now traveling means more to me because I can actually appreciate it and enjoy the experiences.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hobby-card">
+                <div class="hobby-card-image">
+                    <img src="media/images/photography.jpg" alt="Photography" class="hobby-card-img">
+                </div>
+                <div class="hobby-card-content">
+                    <h2>Photography</h2>
+                    <div class="hobby-section">
+                        <h3>Description</h3>
+                        <p>I have grown to love photography in the past couple of years. I love it because it allows me to capture the beauty I see out in the world and translate it into an image for others to see and resonate with.</p>
+                    </div>
+                    <div class="hobby-section">
+                        <h3>Stories</h3>
+                        <p>I used to go with my mom to different sessions she would book and I used to help her carry her equipment and help the clients into different posing positions. My mom used to give me a couple dollars or candy as a reward after. I was quite young so I don't believe I was exactly helping but to this day it's a fond memory I have.</p>
+                    </div>
+                    <div class="hobby-section">
+                        <h3>Importance</h3>
+                        <p>My mom is a photographer and has always shown me how much it can mean to not only one's self, but others as well.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hobby-card">
+                <div class="hobby-card-image">
+                    <img src="media/images/shopping.jpg" alt="Shopping" class="hobby-card-img">
+                </div>
+                <div class="hobby-card-content">
+                    <h2>Shopping</h2>
+                    <div class="hobby-section">
+                        <h3>Description</h3>
+                        <p>I enjoy shopping because, no matter what you're looking for, it can always turn into an adventure. Whether it's window shopping at the mall, walking through a farmers market, or rummaging through a thrift store, it's a fun and relaxing way to spend time, either with friends or on your own. You never really know what you'll come across when you're out shopping, and that sense of surprise and discovery is what makes it so enjoyable.</p>
+                    </div>
+                    <div class="hobby-section">
+                        <h3>Stories</h3>
+                        <p>Once I was trying to kill some time on my own and I decided to go around and explore new thrift stores. I went and came across one that I had never been to and it turned into one of my favorite places. I walked in and by the end when I was checking out I had spent multiple hours there rummaging around and exploring.</p>
+                    </div>
+                    <div class="hobby-section">
+                        <h3>Importance</h3>
+                        <p>Not only can shopping be an easy activity to do if you're bored or want to go out with people, but it's a good way to grow and a great way to explore your self expression.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="url-share-container">
+            <div class="url-display">
+                <input type="text" id="websiteUrl" value="" readonly class="url-input">
+                <button onclick="copyUrl()" class="copy-url-btn" title="Copy URL">
+                    <i class="fas fa-copy"></i> Copy Link
+                </button>
+            </div>
+            <div class="footer-info">
+                <p>Contact Info: <a href="mailto:neeb0019@d.umn.edu" class="footer-link">neeb0019@d.umn.edu</a></p>
+                <p>University of Minnesota Duluth: <a href="https://www.d.umn.edu" target="_blank" class="footer-link">www.d.umn.edu</a></p>
+                <p>&copy; 2025 My Website. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Set the current URL when page loads - use actual usable URL
+        document.getElementById('websiteUrl').value = window.location.href;
+        function copyUrl() {
+            const urlInput = document.getElementById('websiteUrl');
+            urlInput.select();
+            urlInput.setSelectionRange(0, 99999);
+            try {
+                navigator.clipboard.writeText(urlInput.value).then(() => {
+                    const btn = document.querySelector('.copy-url-btn');
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    btn.style.background = '#A9AC83';
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                    }, 2000);
+                });
+            } catch (err) {
+                document.execCommand('copy');
+                const btn = document.querySelector('.copy-url-btn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                btn.style.background = '#A9AC83';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>

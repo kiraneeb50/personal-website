@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="media/style.css">
+</head>
+<body>
+    <header>
+        <div class="title-bar"></div>
+        <nav class="main-nav">
+            <div class="tab-container">
+                <a href="index.html" class="tab active"><span class="icon-box"><i class="fas fa-home"></i></span> Home</a>
+                <a href="hobbies.html" class="tab"><span class="icon-box"><i class="fas fa-heart"></i></span> Hobbies</a>
+                <a href="discover.html" class="tab"><span class="icon-box"><i class="fas fa-location-dot"></i></span> Discover</a>
+                <a href="resume.html" class="tab"><span class="icon-box"><i class="fas fa-file-alt"></i></span> Resume</a>
+                <a href="career.html" class="tab"><span class="icon-box"><i class="fas fa-briefcase"></i></span> Career</a>
+                <a href="game.html" class="tab"><span class="icon-box"><i class="fas fa-gamepad"></i></span> Game</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="about-section">
+            <h1>About Me</h1>
+            <div class="about-content">
+                <img src="media/images/Kiraprofheadshot.JPG" alt="Kira Neeb" class="profile-image">
+                <p>Hello my name is Kira Neeb! I am a sophomore at UMD and this is my personal website. I am a Marketing and Graphic Design major and I would like to work in PR. I am focused on combining my passion for graphic design with my interest in website creation, while building experience with different coding systems. While navigating through my website, you will learn more about my career and future goals, UMD and why I chose to go here, all while learning about me and my hobbies. I hope you enjoy my website!</p>
+            </div>
+        </div>
+        
+        <div class="hobbies-container">
+            <div class="hobby-box">
+                <div class="hobby-image-wrapper">
+                    <img src="media/images/winter-activities.jpg" alt="Winter Activities" class="hobby-image">
+                </div>
+                <div class="hobby-content">
+                    <h2>Winter Activities</h2>
+                    <p>I have grown up learning how to ski at a young age and ever since then I have loved the sport. Skiing and snowboarding are my favorite things to do when the snow falls each winter. In middle school and high school I competed in downhill skiing, and have since learned how to snowboard.</p>
+                </div>
+            </div>
+            
+            <div class="hobby-box">
+                <div class="hobby-image-wrapper">
+                    <img src="media/images/concerts.jpg" alt="Going to Concerts" class="hobby-image">
+                </div>
+                <div class="hobby-content">
+                    <h2>Going to Concerts</h2>
+                    <p>As of the past couple of years I have really enjoyed going to concerts and hearing music live, it is a different type of experience to hear the music you love listening to live for the first time. My favorite performers I've seen so far would definitely be Clairo, Tyler the Creator, and the Marias at Hinterland.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-section">
+            <div class="video-container">
+                <video controls class="home-video" preload="metadata">
+                    <source src="media/videos/PersonalWebVid.mp4" type="video/mp4">
+                    <source src="media/videos/PersonalWebVid.MOV" type="video/quicktime">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="url-share-container">
+            <div class="url-display">
+                <input type="text" id="websiteUrl" value="" readonly class="url-input">
+                <button onclick="copyUrl()" class="copy-url-btn" title="Copy URL">
+                    <i class="fas fa-copy"></i> Copy Link
+                </button>
+            </div>
+            <div class="footer-info">
+                <p>Contact Info: <a href="mailto:neeb0019@d.umn.edu" class="footer-link">neeb0019@d.umn.edu</a></p>
+                <p>University of Minnesota Duluth: <a href="https://www.d.umn.edu" target="_blank" class="footer-link">www.d.umn.edu</a></p>
+                <p>&copy; 2025 My Website. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Set the current URL when page loads - use actual usable URL
+        document.getElementById('websiteUrl').value = window.location.href;
+        
+        function copyUrl() {
+            const urlInput = document.getElementById('websiteUrl');
+            urlInput.select();
+            urlInput.setSelectionRange(0, 99999); // For mobile devices
+            
+            try {
+                navigator.clipboard.writeText(urlInput.value).then(() => {
+                    const btn = document.querySelector('.copy-url-btn');
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    btn.style.background = '#A9AC83';
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                    }, 2000);
+                });
+            } catch (err) {
+                // Fallback for older browsers
+                document.execCommand('copy');
+                const btn = document.querySelector('.copy-url-btn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                btn.style.background = '#A9AC83';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>
